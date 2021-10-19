@@ -57,16 +57,13 @@ catch (Exception $ex){
                 <form method="get">
               <table class="table">
                 <thead>
+                <!-- you already have the stuff you need in the Course class, just changed the headings -->
                   <tr>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Location</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Contact Name</th>
-                    <th>Contact Email</th>
-                    <th>Contact Phone</th>
+                    <th>Course name</th>                                        
+                    <th>Course code</th>
+                    <th>CAO points</th>
+                    <th>Start Date</th>                                     
                     <th>Image</th>
                   </tr>
                 </thead>
@@ -77,11 +74,11 @@ catch (Exception $ex){
                     <tr>
                       <!-- a radio button will display for each course, the user can choose one course then choose the View button below -->
                       <td><input type="radio" name="course_id" value="<?= $course->id ?>" /> </td>
-                      <td><?= $course->title ?></td>
-                      <td><?= substr($course->name_course, 0, 30) ?></td>
+                      <td><?= $course->name_course ?></td>                      
                       <td><?= $course->code_course ?></td>
-                      <td><?= $course->start_date ?></td>
                       <td><?= $course->cao_points ?></td>
+                      <td><?= $course->start_date ?></td>
+                      
                         <td>
                         <?php
                             // We have the image_id for the course, now call findById(image_id) in the class Image.php
@@ -89,7 +86,8 @@ catch (Exception $ex){
                             $image = Image::findById($course->image_id);
                             if ($image !== null){
                                 ?>
-                                <img src="<?= APP_URL . "/" . $image->filename ?>" width="50px" alt="image" />
+                                <!-- same problem again, needs the underscore in the name -->
+                                <img src="<?= APP_URL . "/" . $image->file_name ?>" width="50px" alt="image" />
                         <?php
                             }
                             ?>
