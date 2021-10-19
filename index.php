@@ -39,7 +39,7 @@ echo(APP_URL)
                     <img src="<?= APP_URL . "/" . $course_image->file_name ?>" class="card-img-top" alt="...">
                   <?php
                   }
-                  ?>Z
+                  ?>
                 <div class="card-body">
                   <h5 class="card-title"><?= $course->name_course ?></h5>
                   <p class="card-text"><?= get_words($course->code_course, 20) ?></p>

@@ -67,12 +67,22 @@ try {
               <!--Disabled so the user can't intereact. This form is for viewing only.-->
               <div class="form-group">
                 <label class="labelHidden" for="ticketPrice">Title</label>
-                <input placeholder="Title" type="text" id="title" class="form-control" value="<?= $course->title ?>" disabled />
+                <input placeholder="Title" type="text" id="title" class="form-control" value="<?= $course->name_course ?>" disabled />
               </div>
 
               <div class="form-group">
-                <label class="labelHidden" for="date">Description</label>
-                <textarea name="description" rows="3" id="description" class="form-control" disabled><?= $course->description ?></textarea>
+                <label class="labelHidden" for="ticketPrice">Code course</label>
+                <input placeholder="Title" type="text" id="title" class="form-control" value="<?= $course->code_course ?>" disabled />
+              </div>
+
+              <div class="form-group">
+                <label class="labelHidden" for="ticketPrice">CAO points</label>
+                <input placeholder="Title" type="text" id="title" class="form-control" value="<?= $course->cao_points ?>" disabled />
+              </div>
+
+              <div class="form-group">
+                <label class="labelHidden" for="venueCapacity">Start Date</label>
+                <input placeholder="Start Date" type="date" class="form-control" id="startDate" value="<?= $course->start_date ?>" disabled />
               </div>
 
               <div class="form-group">
@@ -96,31 +106,6 @@ try {
               </div>
 
               <div class="form-group">
-                <label class="labelHidden" for="venueCapacity">Start Date</label>
-                <input placeholder="Start Date" type="date" class="form-control" id="startDate" value="<?= $course->start_date ?>" disabled />
-              </div>
-
-              <div class="form-group">
-                <label class="labelHidden" for="venueCapacity">End Date</label>
-                <input placeholder="End Date" type="date" class="form-control" id="endDate" value="<?= $course->end_date ?>" disabled />
-              </div>
-
-              <div class="form-group">
-                <label class="labelHidden" for="venueDescription">Contact Name</label>
-                <input placeholder="Contact Name" type="text" id="contactName" class="form-control" value="<?= $course->contact_name ?>" disabled />
-              </div>
-
-              <div class="form-group">
-                <label class="labelHidden" for="venueDescription">Contact Email</label>
-                <input placeholder="Contact Email" type="email" id="contactEmail" class="form-control" value="<?= $course->contact_email ?>" disabled />
-              </div>
-
-              <div class="form-group">
-                <label class="labelHidden" for="venueDescription">Contact Phone</label>
-                <input placeholder="Contact Phone" type="text" id="contactPhone" class="form-control" value="<?= $course->contact_phone ?>" disabled />
-              </div>
-
-              <div class="form-group">
                 <label class="labelHidden" for="venueDescription">Image</label>
                 <?php
                 try {
@@ -129,14 +114,14 @@ try {
                 }
                 if ($image !== null) {
                 ?>
-                  <img src="<?= APP_URL . "/" . $image->filename ?>" width="205px" alt="image" class="mt-2 mb-2" />
+                  <img src="<?= APP_URL . "/" . $image->file_name ?>" width="205px" alt="image" class="mt-2 mb-2" />
                 <?php
                 }
                 ?>
               </div>
 
               <div class="form-group">
-                <a class="btn btn-default" href="<?= APP_URL ?>/home.php">Cancel</a>
+                <a class="btn btn-default" href="<?= APP_URL ?>/course-index.php">Cancel</a>
                 <button class="btn btn-warning" formaction="<?= APP_URL ?>/course-edit.php">Edit</button>
                 <button class="btn btn-danger btn-course-delete" formaction="<?= APP_URL ?>/course-delete.php">Delete</button>
               </div>

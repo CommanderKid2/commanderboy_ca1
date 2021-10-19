@@ -2,7 +2,8 @@
 class Image
 {
   public $id;
-  public $filename;
+  // so i changed it in here to suit
+  public $file_name;
 
   public function __construct()
   {
@@ -50,7 +51,11 @@ class Image
         $row = $select_stmt->Fetch(PDO::FETCH_ASSOC);
         $image = new Image();
         $image->id = $row['id'];
-        $image->filename = $row['file_name'];
+        // and down here, it was looking for 'filename' but should have the underscore
+        // also the images are just named wrong
+        // has 'festival_01.jpg' but should be 'course_01.png'
+        // then have to change all the filenames
+        $image->file_name = $row['file_name'];
       }
     } finally {
       if ($db !== null && $db->is_open()) {
