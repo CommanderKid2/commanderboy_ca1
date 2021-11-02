@@ -87,29 +87,6 @@ try {
               </div>
 
               <div class="form-group">
-                <label class="labelHidden" for="location">Location</label>
-                <select class="form-control" name="location" id="location" >
-                  <!-- triple === means if it is equal. So is location is equal to "USA" display USA, if location is equal to "Belgium" display ...you get the idea..-->
-                  <option value="USA" <?= (($course->location === "USA") ? "selected" : "") ?>>USA</option>
-                  <option value="Belgium" <?= (($course->location === "Belgium") ? "selected" : "") ?>>Belgium</option>>
-                  <option value="Brazil" <?= (($course->location === "Brazil") ? "selected" : "") ?>>Brazil</option>
-                  <option value="UK" <?= (($course->location === "UK") ? "selected" : "") ?>>UK</option>
-                  <option value="Germany" <?= (($course->location === "Germany") ? "selected" : "") ?>>Germany</option>
-                  <option value="Japan" <?= (($course->location === "Japan") ? "selected" : "") ?>>Japan</option>
-                  <option value="Netherlands" <?= (($course->location === "Netherlands") ? "selected" : "") ?>>Netherlands</option>
-                  <option value="Hungary" <?= (($course->location === "Hungary") ? "selected" : "") ?>>Hungary</option>
-                  <option value="Morocco" <?= (($course->location === "Morocco") ? "selected" : "") ?>>Morocco</option>
-                  <option value="Spain" <?= (($course->location === "Spain") ? "selected" : "") ?>>Spain</option>
-                  <option value="Canada" <?= (($course->location === "Canada") ? "selected" : "") ?>>Canada</option>
-                  <option value="Croatia" <?= (($course->location === "Croatia") ? "selected" : "") ?>>Croatia</option>
-                  <option value="Philippines" <?= (($course->location === "Philippines") ? "selected" : "") ?>>Philippines</option>
-                </select>
-              </div>
-
-              
-
-
-              <div class="form-group">
                 <label class="labelHidden" for="venueDescription">Image</label>
                 <?php
                 try {

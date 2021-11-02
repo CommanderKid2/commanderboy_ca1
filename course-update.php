@@ -22,7 +22,6 @@ try {
     $request->validate($rules);
     if ($request->is_valid()) {
         // commented out because we don't have the 'fileupload' class yet
-
         // $image = null;
         // if (FileUpload::exists('profile')) {
         //     //If a file was uploded for profile,
@@ -43,9 +42,9 @@ try {
         $course->cao_points = $request->input("cao_points");
         $course->start_date = $request->input("start_date");        
         /*If not null, the user must have uploaded an image, so reset the image id to that of the one we've just uploaded.*/
-        // if ($image !== null) {
-        //     $festival->image_id = $image->id;
-        // }
+        if ($image !== null) {
+            $festival->image_id = $image->id;
+        }
 
         // you must implement the save() function in the Festival class
         $course->save();
