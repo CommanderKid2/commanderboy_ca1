@@ -1,10 +1,10 @@
 <?php
 // Define constants - values you need that don't need to change (unlike variables which can change) 
 // Its handy to have them all in one place, define them once in this config file and use them anywhere in the code
-define('APP_URL', 'http://localhost/IADT-CC-Y2/festivals');
+define('APP_URL', 'http://localhost/DZ_course_ca1/v2');
 
 define('DB_SERVER', 'localhost');
-define('DB_DATABASE', 'festivals');
+define('DB_DATABASE', 'courses');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 
